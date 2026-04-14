@@ -474,11 +474,9 @@ section[id] {
       <div class="flex flex-wrap justify-center gap-3 mb-16" id="filter-tabs">
         <button class="filter-btn active    px-6 py-2 rounded-full font-medium text-sm" data-filter="todos">Todos</button>
         <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="cozinha">Cozinha</button>
-        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="sala">Sala</button>
         <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="quarto">Quarto</button>
         <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="banheiro">Banheiro</button>
-        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="decoração">Decoração</button>
-        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="eletro">Eletro</button>
+        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="outros">Outros</button>
       </div>
     </div>
 
@@ -736,36 +734,45 @@ section[id] {
 // ─────────────────────────────────────
 // CONFIGURAÇÃO  ← altere o número aqui
 // ─────────────────────────────────────
-const WHATSAPP = '5571999999999';
+const WHATSAPP = '75991257605';
 
 // ─────────────────────────────────────
 // DADOS
 // ─────────────────────────────────────
 const gifts = [
-  {
-    id: 1, name: 'Jogo de Pratos Cerâmica', category: 'cozinha', price: 280,
-    status: 'available', icon: '🍽️',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDWcWme8JLdJ2ofDisAXnIh6-L9jx-XiIiTinL6PLycTfvzBv76H8F8gGpBokZ9fuS_T39kCnIUQBFyoUts_9iJv_hY_qETtEoqYd0-yRG6NWoApC0GbT1VfihSitAGrhahzl9WdxmEkrh580EZiT12I0OLISv5ua_QmOIlPpNtVdkuWOI8fFA9dRmM-XRFvEXE-niPfsmII_buA5DYCYxLQvS-bJc91BvJtRgUF5YImL9YsVgeYQxH0avawgrgP-GeCLn-3GbghEkK'
-  },
-  {
-    id: 2, name: 'Cafeteira Expresso', category: 'eletro', price: 450,
-    status: 'gifted', icon: '☕',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhaiAbAO-btYDOCFL8N8XbfSYJmmgUBgyAYaBcaJD66idT4ovXTp8g6Md-C2At0hN-k3Bl4ajUlZxKiUm3TncU7ieTwn3XW3SZCtLmV5oLUZgQmDtBCsalmBaiFEKX8KRRuJQ4EOWkjQTmhKBhZugwH7duOuVSuEbFcRvC6efW4esgrOSIQmcqlzJh2X6wN3KkmllVvoYmIGD6E61hjY3A3A61af1onCXi99MAFA8uz_5VOWBDhKrZ-ynBxxbJeucAFbDVfrKQFfcs'
-  },
-  {
-    id: 3, name: 'Manta de Algodão Cru', category: 'sala', price: 180,
-    status: 'available', icon: '🛋️',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDxEHdfmd_sa1VM1K5TsQkIctOSwrdE7NA1fIKx9DjkWB0it7hgCcoc9npukElzuLiaGCEHbzErSf4oPtKfxlpsHkoMmQzD0r4DGLSCbwaR7XRv-hb3MF22C2s4pJWjmew0OMgKAi4yxJWmoG_SVXa-vnOpBUO8rQV5ow-LrOY7Ja1DFsAZ64FRNSA_d5kAdhWHzwMI7HwxT01tj928ne_A4keBCV2x8877US5TjYt6EORPbT4e9Bnwqc9S3_YV3jAuel0TRL1msblA'
-  },
-  { id: 4,  name: 'Jogo de Panelas Antiaderente',     category: 'cozinha',  price: 350, status: 'available', icon: '🍳' },
-  { id: 5,  name: 'Conjunto de Toalhas Felpudas',     category: 'banheiro', price: 120, status: 'gifted',    icon: '🛁' },
-  { id: 6,  name: 'Quadro Decorativo Canvas',         category: 'decoração',price: 220, status: 'available', icon: '🖼️' },
-  { id: 7,  name: 'Luminária de Piso',                category: 'sala',     price: 380, status: 'available', icon: '💡' },
-  { id: 8,  name: 'Jogo de Cama Queen 300 Fios',      category: 'quarto',   price: 320, status: 'available', icon: '🛏️' },
-  { id: 9,  name: 'Liquidificador High Speed',        category: 'eletro',   price: 280, status: 'gifted',    icon: '🫙' },
-  { id: 10, name: 'Tapete Sala 2×3m',                 category: 'sala',     price: 450, status: 'available', icon: '🏡' },
-  { id: 11, name: 'Conjunto de Xícaras Porcelana',    category: 'cozinha',  price: 150, status: 'available', icon: '🫖' },
-  { id: 12, name: 'Espelho Decorativo Arredondado',   category: 'decoração',price: 310, status: 'available', icon: '🪞' },
+  { id: 1,  name: 'Jogo de pratos e xícaras (combinados)', category: 'cozinha',  price: 260, status: 'available', icon: '🍽️' },
+  { id: 2,  name: 'Jogo de copos',                         category: 'cozinha',  price: 120, status: 'gifted',    icon: '🥛' },
+  { id: 3,  name: 'Jogo de talheres',                      category: 'cozinha',  price: 180, status: 'available', icon: '🍴' },
+  { id: 4,  name: 'Conjunto de panelas',                   category: 'cozinha',  price: 390, status: 'available', icon: '🍳' },
+  { id: 5,  name: 'Liquidificador',                        category: 'cozinha',  price: 260, status: 'gifted',    icon: '🧃' },
+  { id: 6,  name: 'Mixer',                                 category: 'cozinha',  price: 170, status: 'available', icon: '🥣' },
+  { id: 7,  name: 'Air fryer',                             category: 'cozinha',  price: 420, status: 'available', icon: '🍟' },
+  { id: 8,  name: 'Batedeira',                             category: 'cozinha',  price: 280, status: 'available', icon: '🧁' },
+  { id: 9,  name: 'Sanduicheira',                          category: 'cozinha',  price: 180, status: 'available', icon: '🥪' },
+  { id: 10, name: 'Cafeteira',                             category: 'cozinha',  price: 350, status: 'available', icon: '☕' },
+  { id: 11, name: 'Kit de facas/faqueiro',                category: 'cozinha',  price: 210, status: 'available', icon: '🔪' },
+  { id: 12, name: 'Tábua de corte',                        category: 'cozinha',  price: 95,  status: 'gifted',    icon: '🪵' },
+  { id: 13, name: 'Escorredor de louças',                  category: 'cozinha',  price: 115, status: 'available', icon: '🍴' },
+
+  { id: 14, name: 'Jogo de cama',                          category: 'quarto',   price: 240, status: 'available', icon: '🛏️' },
+  { id: 15, name: 'Edredom / Colcha',                      category: 'quarto',   price: 290, status: 'available', icon: '🧵' },
+  { id: 16, name: 'Travesseiros',                          category: 'quarto',   price: 160, status: 'gifted',    icon: '🛌' },
+  { id: 17, name: 'Cobre-leito',                           category: 'quarto',   price: 210, status: 'available', icon: '🧺' },
+  { id: 18, name: 'Mantas',                                category: 'quarto',   price: 180, status: 'available', icon: '🧶' },
+  { id: 19, name: 'Jogo de toalhas',                       category: 'quarto',   price: 130, status: 'available', icon: '🧻' },
+  { id: 20, name: 'Protetores de colchão',                category: 'quarto',   price: 140, status: 'available', icon: '🛡️' },
+
+  { id: 21, name: 'Jogo de toalhas (banho e rosto)',      category: 'banheiro', price: 160, status: 'available', icon: '🛁' },
+  { id: 22, name: 'Tapetes de banheiro',                  category: 'banheiro', price: 110, status: 'gifted',    icon: '🧼' },
+  { id: 23, name: 'Porta escova + porta sabonete líquido', category: 'banheiro', price: 90, status: 'available', icon: '🪥' },
+
+  { id: 24, name: 'Ferro de passar',                       category: 'outros',   price: 230, status: 'available', icon: '👕' },
+  { id: 25, name: 'Tábua de passar',                       category: 'outros',   price: 170, status: 'available', icon: '🧷' },
+  { id: 26, name: 'Varal de teto com varetas individuais', category: 'outros',   price: 320, status: 'available', icon: '🧺' },
+  { id: 27, name: 'Lixeira grande',                        category: 'outros',   price: 140, status: 'available', icon: '🗑️' },
+  { id: 28, name: 'Máquina de lavar',                      category: 'outros',   price: 2600, status: 'available', icon: '🧼' },
+  { id: 29, name: 'Geladeira',                             category: 'outros',   price: 3400, status: 'gifted',    icon: '🧊' },
+  { id: 30, name: 'Fogão',                                 category: 'outros',   price: 1800, status: 'available', icon: '🔥' },
 ];
 
 // ─────────────────────────────────────
