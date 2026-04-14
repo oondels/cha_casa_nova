@@ -408,29 +408,33 @@ section[id] {
 <!-- ══════════════════════════════════════
      NOSSA HISTÓRIA
 ══════════════════════════════════════ -->
-<section class="py-24 px-6 bg-surface-container-low reveal" id="historia">
-  <div class="max-w-6xl mx-auto">
+<section class="py-24 px-6 bg-surface-container-low reveal relative overflow-hidden" id="historia">
+  <img class="absolute -left-20 top-10 w-56 botanical-accent hidden md:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANoF-8G5BaPORW3x3--S4lCoASU2dls5YTYRRWn-0H2hqW7MhZ3RkX-BrmqjD42UMz2bmLvAd9Ppmwa_wX3QKvONLB1e-u7s9DQHVT2LVgVYkuxB8m52VvfznyL4Et8IMLpimu8Zt3MkOxOcTpiPsHx8EHd6PnCPz_otP05SJmYbSBCZiwbJxZ6-vq3bSP_1kUSKxpGUjalkblMi0IRcY3LvXbBS_waI9bjjiLaaPt7kuvfsm8yGWlGtpLA1mWGVh8C-XH4P9a7CsR" alt="">
+  <img class="absolute -right-20 bottom-4 w-56 botanical-accent rotate-180 hidden md:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYG76wjn5MfF_Ue-5aN7Flju0yzMJv6bTzlNZ0ovqgHa7lJUKxX9sgJvv42ZrvLZTjPm8zTl5ymTxK8oGzIefMXyPDtC_f5Aed7GSwCIVB0n75p5VHZBsIZVqw0Ty0iULIl3_1GyPv9pz_qA-XJ5mrkd-NK6Ts1tyIg_WxWHwz-LPnSHBuCbyockG43qIFj0MNxupdWBbIcbdcpwJY4_Es8VXo7sk-aNh_aQdTWaH7Le_PZBvNO7mOX5FLndUvfOIHyxx0viphj06r" alt="">
+
+  <div class="max-w-6xl mx-auto relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-      <!-- Photo -->
-      <div class="relative group reveal-left">
-        <div class="absolute -inset-4 bg-tertiary/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
-        <img class="relative rounded-lg w-full aspect-[4/5] object-cover shadow-xl"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR9c2Oa-25CYmuwf_pPXx2jHgF2TG4mUYVqoHBJAGjh4bJw2__wZIxlw3hdmDPd9IqXedkpRuA_YTnRqVL6kDavUourwzmZ_JqXkI1J9hvEZ6du45G3HbgnLjE2sfo4zDC6ir-3YqIXDx-uLRgJJlVQppwM3I5xjJujB-JVyVHbENRSieH9rbUfQQKGUPe9yANXJ_FuCaS-qvwJF5nGXBh9pWuUN3fKzbZm9H1FG6tfK6_AgXqpevwYc2nfl9yg5_Ox0ONn1pbXBWv"
-          alt="Hendrius e Rayane">
+      <!-- Text -->
+      <div class="space-y-8 reveal-left order-2 md:order-1">
+        <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight font-serif">Nossa História</h2>
+        <div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+          <p>Tudo começou com um café despretensioso e uma conversa que parecia não ter fim. Entre risadas, planos e sonhos compartilhados, descobrimos que queríamos construir muito mais do que memórias: queríamos um lar.</p>
+          <p>Hoje, cada detalhe da nossa casa carrega um pedacinho da nossa trajetória. Escolhemos com carinho cada canto, imaginando os encontros, os abraços e os momentos especiais com quem amamos.</p>
+          <p>Este Chá de Casa Nova celebra exatamente isso: a alegria de abrir as portas do nosso novo capítulo e viver essa fase tão bonita ao lado de pessoas queridas como você.</p>
+        </div>
+        <div class="pt-2">
+          <span class="text-primary font-serif italic text-2xl">Com carinho, Hendrius &amp; Rayane.</span>
+        </div>
       </div>
 
-      <!-- Text -->
-      <div class="space-y-8 reveal-right">
-        <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight">
-          Um novo capítulo, uma nova porta que se abre.
-        </h2>
-        <div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
-          <p>Após anos sonhando juntos, finalmente encontramos o lugar que chamaremos de lar. Cada canto foi planejado para refletir quem somos e para receber aqueles que amamos.</p>
-          <p>O Chá de Casa Nova é mais do que uma celebração; é a oportunidade de partilhar a alegria dessa nova etapa com você, que faz parte da nossa história.</p>
-        </div>
-        <div class="pt-4">
-          <span class="text-primary font-serif italic text-2xl">Com carinho, H &amp; R.</span>
+      <!-- Photo Placeholder -->
+      <div class="relative group reveal-right order-1 md:order-2">
+        <div class="absolute -inset-4 bg-tertiary/10 rounded-xl rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+        <div class="relative rounded-lg w-full aspect-[4/5] shadow-xl bg-gradient-to-br from-surface-container-high to-surface flex flex-col items-center justify-center text-center p-8 border border-outline-variant/30">
+          <span class="material-symbols-outlined text-primary text-6xl mb-4" style="font-variation-settings:'FILL' 1;">favorite</span>
+          <p class="font-serif text-2xl text-primary mb-2">Foto do casal</p>
+          <p class="text-on-surface-variant text-sm max-w-xs">Espaço reservado para uma foto especial de Hendrius e Rayane.</p>
         </div>
       </div>
     </div>
