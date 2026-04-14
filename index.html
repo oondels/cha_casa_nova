@@ -330,10 +330,155 @@ section[id] {
 #pix-copy-feedback {
   min-height: 1.25rem;
 }
+
+
+/* ══════ PAGE LOADER ══════ */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at top, rgba(255, 218, 211, 0.45), transparent 42%),
+    linear-gradient(135deg, rgba(252,249,244,0.98), rgba(240,237,233,0.98));
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+.page-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDA7RBAsYzb7EO1ujsoeNNXNJJIIjQCOBuxzpMpqbJ4sTxMR2aQAea06FAD7WsBWTuIqQGmi3-RmlukEg-MYUw07mmKkICGWln2vGhKrM5DzJB0I24wb3x7_nONkDjxBRlDf8J2_-rlLqXvCABe3ztgBlQLb5DwGq_cxAGfu-qmQjRX_lVECDw4oWZ5VqcsqTYhY8IBLvWdR_lOUCsF-K2RvnEvrAitQd-KGr0gJ9vCkZxgrjmgKB8-fDLtCH3fY6Sl50lFXonOMMC4);
+  opacity: 0.025;
+  pointer-events: none;
+}
+.page-loader.out {
+  opacity: 0;
+  visibility: hidden;
+}
+.page-loader-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 30rem);
+  text-align: center;
+  padding: 2.5rem 1.75rem;
+  border: 1px solid rgba(216, 194, 189, 0.6);
+  border-radius: 1.5rem;
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 24px 60px rgba(110, 51, 39, 0.12);
+}
+.page-loader-item {
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+  animation: loaderFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.page-loader-item.loader-d1 { animation-delay: 0.08s; }
+.page-loader-item.loader-d2 { animation-delay: 0.18s; }
+.page-loader-item.loader-d3 { animation-delay: 0.28s; }
+.page-loader-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0 auto 1rem;
+  border-radius: 9999px;
+  color: #6e3327;
+  background: rgba(255, 218, 211, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(216,194,189,0.45);
+}
+.page-loader-title {
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  color: #6e3327;
+}
+.page-loader-subtitle {
+  margin-top: 0.65rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #374938;
+}
+.page-loader-progress {
+  margin-top: 1.5rem;
+  height: 0.3rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgba(216, 194, 189, 0.7);
+}
+.page-loader-progress-bar {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #8e4c3e, #6e3327);
+  transform: scaleX(0.1);
+  transform-origin: left;
+  animation: loaderProgress 2.1s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+@keyframes loaderFadeUp {
+  from { opacity: 0; transform: translateY(18px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes loaderProgress {
+  0% { transform: scaleX(0.08); }
+  50% { transform: scaleX(0.76); }
+  100% { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .hero-item,
+  .modal-box,
+  .cta-pulse,
+  .page-loader,
+  .page-loader-item,
+  .page-loader-progress-bar {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .hero-item,
+  .page-loader-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .page-loader-progress-bar {
+    transform: scaleX(1) !important;
+  }
+}
+
 </style>
 </head>
 
 <body class="text-on-surface selection:bg-primary/20">
+
+<div id="page-loader" class="page-loader" aria-live="polite" aria-label="Carregando página">
+  <div class="page-loader-card">
+    <div class="page-loader-item loader-d1 page-loader-icon">
+      <span class="material-symbols-outlined text-4xl" style="font-variation-settings:'FILL' 1;">potted_plant</span>
+    </div>
+    <p class="page-loader-item loader-d2 page-loader-title">Chá de Casa Nova</p>
+    <p class="page-loader-item loader-d3 page-loader-subtitle">Hendrius &amp; Rayane</p>
+    <div class="page-loader-item loader-d3 page-loader-progress" aria-hidden="true">
+      <div class="page-loader-progress-bar"></div>
+    </div>
+  </div>
+</div>
+
 
 <div class="grainy-overlay"></div>
 
@@ -690,22 +835,34 @@ section[id] {
     </div>
 
     <p class="text-on-surface-variant text-sm leading-relaxed mb-8" id="modal-gift-note">
-      Para confirmar este presente, entre em contato pelo WhatsApp. Ficamos muito felizes com sua escolha! 🎁
+      Preencha seus dados para registrar visualmente a escolha deste presente.
     </p>
 
-    <div class="flex flex-col gap-3">
-      <a id="modal-whatsapp-btn" href="#" target="_blank" rel="noopener"
-        class="flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-md">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Abrir WhatsApp
-      </a>
-      <button id="modal-gift-unavailable"
-        class="hidden w-full py-3 rounded-full bg-surface-variant text-on-surface-variant/70 font-bold uppercase tracking-widest text-xs cursor-not-allowed"
-        disabled>
-        Item já presenteado
-      </button>
+    <div class="flex flex-col gap-4">
+      <div id="modal-gift-form-section" class="space-y-4">
+        <div>
+          <label class="block text-sm font-bold text-on-surface mb-1" for="modal-guest-name">Nome completo</label>
+          <input id="modal-guest-name" type="text" autocomplete="name" placeholder="Seu nome completo"
+            class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors text-sm">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-on-surface mb-1" for="modal-guest-phone">Telefone / WhatsApp</label>
+          <input id="modal-guest-phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000"
+            class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors text-sm">
+        </div>
+        <button id="modal-gift-choose-btn" type="button"
+          class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-md">
+          <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">volunteer_activism</span>
+          Escolher Presente
+        </button>
+      </div>
+
+      <div id="modal-gift-unavailable-section" class="hidden">
+        <span class="w-full inline-flex items-center justify-center py-3 rounded-full bg-surface-variant text-on-surface-variant/70 font-bold uppercase tracking-widest text-xs cursor-not-allowed select-none">
+          Item já presenteado
+        </span>
+      </div>
+
       <button onclick="closeGiftModal()"
         class="border-2 border-outline-variant text-primary px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-surface-variant transition-all">
         Fechar
@@ -820,11 +977,25 @@ section[id] {
           class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors text-sm"></textarea>
       </div>
 
+      <div class="relative py-2">
+        <div class="h-px bg-outline-variant/40"></div>
+        <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container-lowest px-3 text-[11px] font-bold uppercase tracking-widest text-tertiary">Seus dados</span>
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-on-surface mb-1" for="suggest-guest-name">Nome completo</label>
+        <input id="suggest-guest-name" type="text" autocomplete="name" placeholder="Seu nome completo"
+          class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors text-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-on-surface mb-1" for="suggest-guest-phone">Telefone / WhatsApp</label>
+        <input id="suggest-guest-phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000"
+          class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors text-sm">
+      </div>
       <button type="submit"
-        class="w-full bg-primary text-on-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-md mt-2">
-        Enviar sugestão
+        class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-md mt-2">
+        <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">volunteer_activism</span>
+        Escolher sugestão de presente
       </button>
-      <p class="text-on-surface-variant text-xs text-center">Fluxo visual pronto — envio real será ativado depois.</p>
     </form>
   </div>
 </div>
@@ -1059,9 +1230,13 @@ function initFilters() {
 function openGiftModal(id) {
   const gift = gifts.find(g => g.id === id);
   if (!gift) return;
+
   const gifted = gift.status === 'gifted';
-  const whatsappBtn = document.getElementById('modal-whatsapp-btn');
-  const unavailableBtn = document.getElementById('modal-gift-unavailable');
+  const formSection = document.getElementById('modal-gift-form-section');
+  const unavailableSection = document.getElementById('modal-gift-unavailable-section');
+  const guestNameInput = document.getElementById('modal-guest-name');
+  const guestPhoneInput = document.getElementById('modal-guest-phone');
+  const chooseBtn = document.getElementById('modal-gift-choose-btn');
 
   document.getElementById('modal-gift-title').textContent    = gift.name;
   document.getElementById('modal-gift-category').textContent = categoryLabel(gift.category);
@@ -1069,22 +1244,24 @@ function openGiftModal(id) {
   document.getElementById('modal-gift-price').textContent    = `R$ ${fmt(gift.price)}`;
   document.getElementById('modal-gift-note').textContent     = gifted
     ? 'Este item já foi escolhido por outro convidado. Você pode ver outros itens disponíveis na lista. 💛'
-    : 'Para confirmar este presente, entre em contato pelo WhatsApp. Ficamos muito felizes com sua escolha! 🎁';
+    : 'Preencha seus dados para registrar visualmente a escolha deste presente.';
 
   const visual = document.getElementById('modal-gift-visual');
   visual.innerHTML = gift.image
     ? `<img src="${gift.image}" alt="${gift.name}" class="w-full h-full object-cover">`
     : `<span class="text-7xl">${gift.icon}</span>`;
 
-  const msg = encodeURIComponent(`Olá! Quero presentear: ${gift.name} (R$ ${fmt(gift.price)}) no Chá de Casa Nova de Hendrius & Rayane 🏡`);
-  whatsappBtn.href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+  guestNameInput.value = '';
+  guestPhoneInput.value = '';
+  chooseBtn.disabled = false;
+  chooseBtn.classList.remove('opacity-70', 'cursor-not-allowed');
 
   if (gifted) {
-    whatsappBtn.classList.add('hidden');
-    unavailableBtn.classList.remove('hidden');
+    formSection.classList.add('hidden');
+    unavailableSection.classList.remove('hidden');
   } else {
-    whatsappBtn.classList.remove('hidden');
-    unavailableBtn.classList.add('hidden');
+    formSection.classList.remove('hidden');
+    unavailableSection.classList.add('hidden');
   }
 
   document.getElementById('gift-modal').classList.add('open');
@@ -1312,6 +1489,27 @@ function initBackToTop() {
   }, { passive: true });
 }
 
+
+// ─────────────────────────────────────
+// PAGE LOADER
+// ─────────────────────────────────────
+let pageLoaderHidden = false;
+function hidePageLoader() {
+  if (pageLoaderHidden) return;
+  const loader = document.getElementById('page-loader');
+  if (!loader) return;
+
+  pageLoaderHidden = true;
+  loader.classList.add('out');
+
+  const removeLoader = () => {
+    if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+  };
+
+  loader.addEventListener('transitionend', removeLoader, { once: true });
+  window.setTimeout(removeLoader, 700);
+}
+
 // ─────────────────────────────────────
 // INIT
 // ─────────────────────────────────────
@@ -1323,7 +1521,18 @@ document.addEventListener('DOMContentLoaded', () => {
   attachRevealObserver();
   initHeroParallax();
   initBackToTop();
+
+  const chooseGiftBtn = document.getElementById('modal-gift-choose-btn');
+  if (chooseGiftBtn) {
+    chooseGiftBtn.addEventListener('click', () => {
+      chooseGiftBtn.blur();
+    });
+  }
+
+  window.setTimeout(hidePageLoader, 5000);
 });
+
+window.addEventListener('load', hidePageLoader);
 </script>
 
 </body>
