@@ -182,7 +182,7 @@ section[id] {
   transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ══════ GIFT CARD FILTER ══════ */
+/* ══════ GIFT LIST FILTER ══════ */
 .gift-card {
   transition: opacity 0.32s ease, transform 0.32s ease,
               box-shadow 0.4s ease, translate 0.4s ease;
@@ -196,10 +196,10 @@ section[id] {
   display: none;
 }
 
-/* ══════ GIFT CARD GLOW ══════ */
+/* ══════ GIFT ITEM GLOW ══════ */
 .gift-card:hover {
   box-shadow: 0 0 0 2px rgba(142, 76, 62, 0.2),
-              0 24px 60px rgba(110, 51, 39, 0.09);
+              0 14px 36px rgba(110, 51, 39, 0.12);
 }
 
 /* ══════ GIFT IMAGE OVERLAY ══════ */
@@ -480,8 +480,8 @@ section[id] {
       </div>
     </div>
 
-    <!-- Gift Grid (rendered by JS) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gift-grid"></div>
+    <!-- Gift List (rendered by JS) -->
+    <div class="space-y-4 max-w-4xl mx-auto" id="gift-grid"></div>
 
   </div>
 </section>
@@ -632,12 +632,23 @@ section[id] {
       class="aspect-video rounded-lg mb-6 flex items-center justify-center overflow-hidden bg-surface-container-high">
     </div>
 
+    <div class="grid grid-cols-2 gap-3 mb-6 text-sm">
+      <div class="bg-surface rounded-lg px-4 py-3 border border-outline-variant/30">
+        <p class="text-on-surface-variant text-[11px] uppercase tracking-widest font-bold mb-1">Categoria</p>
+        <p class="font-bold text-tertiary" id="modal-gift-category">—</p>
+      </div>
+      <div class="bg-surface rounded-lg px-4 py-3 border border-outline-variant/30">
+        <p class="text-on-surface-variant text-[11px] uppercase tracking-widest font-bold mb-1">Status</p>
+        <p class="font-bold text-primary" id="modal-gift-status">—</p>
+      </div>
+    </div>
+
     <div class="flex justify-between items-center mb-6">
-      <span class="text-xs font-bold text-tertiary uppercase tracking-widest" id="modal-gift-category">—</span>
+      <span class="text-on-surface-variant text-sm">Valor estimado</span>
       <span class="text-primary font-bold text-xl" id="modal-gift-price">—</span>
     </div>
 
-    <p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+    <p class="text-on-surface-variant text-sm leading-relaxed mb-8" id="modal-gift-note">
       Para confirmar este presente, entre em contato pelo WhatsApp. Ficamos muito felizes com sua escolha! 🎁
     </p>
 
@@ -649,6 +660,11 @@ section[id] {
         </svg>
         Abrir WhatsApp
       </a>
+      <button id="modal-gift-unavailable"
+        class="hidden w-full py-3 rounded-full bg-surface-variant text-on-surface-variant/70 font-bold uppercase tracking-widest text-xs cursor-not-allowed"
+        disabled>
+        Item já presenteado
+      </button>
       <button onclick="closeGiftModal()"
         class="border-2 border-outline-variant text-primary px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-surface-variant transition-all">
         Fechar
@@ -782,6 +798,16 @@ function fmt(n) {
   return n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 }
 
+function categoryLabel(category) {
+  const labels = {
+    cozinha: 'Cozinha',
+    quarto: 'Quarto',
+    banheiro: 'Banheiro',
+    outros: 'Outros',
+  };
+  return labels[category] || category;
+}
+
 // ─────────────────────────────────────
 // RENDER GIFTS
 // ─────────────────────────────────────
@@ -796,40 +822,40 @@ function renderGifts() {
     const gifted = gift.status === 'gifted';
     const delay  = (i % 3) * 100;
 
-    const imgHtml = gift.image
-      ? `<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              src="${gift.image}" alt="${gift.name}" loading="lazy">
-         <div class="gift-img-overlay rounded-lg"></div>`
-      : `<span class="text-6xl select-none pointer-events-none">${gift.icon}</span>`;
-
     const card = document.createElement('div');
-    card.className = 'gift-card group bg-surface-container-lowest p-6 rounded-lg reveal';
+    card.className = 'gift-card group bg-surface-container-lowest px-4 py-4 md:px-5 md:py-5 rounded-xl border border-outline-variant/30 reveal cursor-pointer';
     card.style.transitionDelay = `${delay}ms`;
     card.dataset.category = gift.category;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Ver detalhes de ${gift.name}`);
+
+    card.addEventListener('click', () => openGiftModal(gift.id));
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openGiftModal(gift.id);
+      }
+    });
 
     card.innerHTML = `
-      <div class="aspect-square bg-surface-container-high rounded-lg mb-6 flex items-center justify-center overflow-hidden gift-img-wrap">
-        ${imgHtml}
+      <div class="flex items-center gap-4 md:gap-5">
+        <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-2xl shrink-0">
+          ${gift.icon || '🎁'}
+        </div>
+        <div class="min-w-0 flex-1">
+          <h3 class="text-base md:text-lg font-bold ${gifted ? 'text-on-surface/55' : 'text-on-surface'}">${gift.name}</h3>
+          <p class="text-[11px] mt-1 font-bold text-tertiary uppercase tracking-widest">${categoryLabel(gift.category)}</p>
+          <p class="text-xs text-on-surface-variant mt-2">Clique para ver mais informações</p>
+        </div>
+        <div class="text-right shrink-0 pl-2">
+          <p class="font-bold text-sm md:text-base ${gifted ? 'text-primary/50' : 'text-primary'}">R$ ${fmt(gift.price)}</p>
+          <span class="inline-flex mt-2 ${gifted ? 'bg-surface-variant text-on-surface-variant' : 'bg-tertiary-fixed text-on-tertiary-fixed'} text-[10px] font-bold px-2 py-1 rounded-full uppercase whitespace-nowrap">
+            ${gifted ? 'Já presenteado' : 'Disponível'}
+          </span>
+          <span class="material-symbols-outlined block text-on-surface-variant/60 text-lg mt-1">chevron_right</span>
+        </div>
       </div>
-      <div class="flex justify-between items-start mb-2">
-        <span class="text-xs font-bold text-tertiary uppercase tracking-widest">${gift.category}</span>
-        <span class="${gifted
-          ? 'bg-surface-variant text-on-surface-variant'
-          : 'bg-tertiary-fixed text-on-tertiary-fixed'
-        } text-[10px] font-bold px-2 py-1 rounded-full uppercase whitespace-nowrap">
-          ${gifted ? 'Já presenteado' : 'Disponível'}
-        </span>
-      </div>
-      <h3 class="text-xl font-bold mb-2 ${gifted ? 'text-on-surface/50' : 'text-on-surface'}">${gift.name}</h3>
-      <p class="font-bold text-lg mb-6 ${gifted ? 'text-primary/50' : 'text-primary'}">R$&nbsp;${fmt(gift.price)}</p>
-      ${gifted
-        ? `<button class="w-full py-3 rounded-full bg-surface-variant text-on-surface-variant/50 font-bold uppercase tracking-widest text-xs cursor-not-allowed" disabled>Indisponível</button>`
-        : `<button
-             onclick="openGiftModal(${gift.id})"
-             class="w-full py-3 rounded-full border-2 border-outline-variant text-primary font-bold uppercase tracking-widest text-xs group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all">
-             Presentear
-           </button>`
-      }
     `;
     grid.appendChild(card);
   });
@@ -917,10 +943,17 @@ function initFilters() {
 function openGiftModal(id) {
   const gift = gifts.find(g => g.id === id);
   if (!gift) return;
+  const gifted = gift.status === 'gifted';
+  const whatsappBtn = document.getElementById('modal-whatsapp-btn');
+  const unavailableBtn = document.getElementById('modal-gift-unavailable');
 
   document.getElementById('modal-gift-title').textContent    = gift.name;
-  document.getElementById('modal-gift-category').textContent = gift.category;
+  document.getElementById('modal-gift-category').textContent = categoryLabel(gift.category);
+  document.getElementById('modal-gift-status').textContent   = gifted ? 'Já presenteado' : 'Disponível';
   document.getElementById('modal-gift-price').textContent    = `R$ ${fmt(gift.price)}`;
+  document.getElementById('modal-gift-note').textContent     = gifted
+    ? 'Este item já foi escolhido por outro convidado. Você pode ver outros itens disponíveis na lista. 💛'
+    : 'Para confirmar este presente, entre em contato pelo WhatsApp. Ficamos muito felizes com sua escolha! 🎁';
 
   const visual = document.getElementById('modal-gift-visual');
   visual.innerHTML = gift.image
@@ -928,7 +961,15 @@ function openGiftModal(id) {
     : `<span class="text-7xl">${gift.icon}</span>`;
 
   const msg = encodeURIComponent(`Olá! Quero presentear: ${gift.name} (R$ ${fmt(gift.price)}) no Chá de Casa Nova de Hendrius & Rayane 🏡`);
-  document.getElementById('modal-whatsapp-btn').href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+  whatsappBtn.href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+
+  if (gifted) {
+    whatsappBtn.classList.add('hidden');
+    unavailableBtn.classList.remove('hidden');
+  } else {
+    whatsappBtn.classList.remove('hidden');
+    unavailableBtn.classList.add('hidden');
+  }
 
   document.getElementById('gift-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
