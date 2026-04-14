@@ -1,326 +1,1110 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="pt-BR"><head>
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Chá de Casa Nova | Hendrius &amp; Julia</title>
+<title>Chá de Casa Nova | Hendrius &amp; Rayane</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Chá de Casa Nova | Hendrius & Rayane" />
+<meta property="og:description" content="Estamos construindo nosso ninho e sua presença é o maior presente. 25 de Outubro de 2026 • Bahia, Brasil." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDR9c2Oa-25CYmuwf_pPXx2jHgF2TG4mUYVqoHBJAGjh4bJw2__wZIxlw3hdmDPd9IqXedkpRuA_YTnRqVL6kDavUourwzmZ_JqXkI1J9hvEZ6du45G3HbgnLjE2sfo4zDC6ir-3YqIXDx-uLRgJJlVQppwM3I5xjJujB-JVyVHbENRSieH9rbUfQQKGUPe9yANXJ_FuCaS-qvwJF5nGXBh9pWuUN3fKzbZm9H1FG6tfK6_AgXqpevwYc2nfl9yg5_Ox0ONn1pbXBWv" />
+<meta property="og:locale" content="pt_BR" />
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-secondary": "#ffffff",
-                        "surface-container-high": "#ebe8e3",
-                        "tertiary-container": "#4e614f",
-                        "on-primary-fixed": "#390b04",
-                        "tertiary": "#374938",
-                        "inverse-on-surface": "#f3f0eb",
-                        "surface-tint": "#8e4c3e",
-                        "on-surface": "#1c1c19",
-                        "on-primary": "#ffffff",
-                        "secondary-container": "#ffb8a8",
-                        "primary-fixed": "#ffdad3",
-                        "background": "#fcf9f4",
-                        "secondary": "#865043",
-                        "surface-variant": "#e5e2dd",
-                        "on-surface-variant": "#534340",
-                        "on-error": "#ffffff",
-                        "secondary-fixed-dim": "#fcb6a5",
-                        "error": "#ba1a1a",
-                        "inverse-surface": "#31302d",
-                        "on-tertiary-fixed-variant": "#394b3a",
-                        "surface-container-highest": "#e5e2dd",
-                        "on-tertiary": "#ffffff",
-                        "tertiary-fixed-dim": "#b8ccb6",
-                        "surface-container": "#f0ede9",
-                        "surface-dim": "#dcdad5",
-                        "surface": "#fcf9f4",
-                        "on-primary-fixed-variant": "#713529",
-                        "surface-bright": "#fcf9f4",
-                        "secondary-fixed": "#ffdad2",
-                        "on-background": "#1c1c19",
-                        "error-container": "#ffdad6",
-                        "surface-container-lowest": "#ffffff",
-                        "primary-container": "#8b4a3c",
-                        "primary": "#6e3327",
-                        "on-tertiary-fixed": "#0f1f11",
-                        "tertiary-fixed": "#d3e8d1",
-                        "on-secondary-container": "#7a463a",
-                        "on-secondary-fixed": "#350f07",
-                        "on-primary-container": "#ffc9bd",
-                        "outline-variant": "#d8c2bd",
-                        "outline": "#86736f",
-                        "on-error-container": "#93000a",
-                        "inverse-primary": "#ffb4a4",
-                        "on-tertiary-container": "#c6dbc4",
-                        "on-secondary-fixed-variant": "#6a392e",
-                        "surface-container-low": "#f6f3ee",
-                        "primary-fixed-dim": "#ffb4a4"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                    "fontFamily": {
-                        "headline": ["Noto Serif"],
-                        "body": ["Manrope"],
-                        "label": ["Manrope"]
-                    }
-                },
-            }
-        }
-    </script>
-<style>body {
-    font-family: "Manrope", sans-serif;
-    background-color: #fcf9f4;
-    position: relative
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-secondary": "#ffffff",
+        "surface-container-high": "#ebe8e3",
+        "tertiary-container": "#4e614f",
+        "on-primary-fixed": "#390b04",
+        "tertiary": "#374938",
+        "inverse-on-surface": "#f3f0eb",
+        "surface-tint": "#8e4c3e",
+        "on-surface": "#1c1c19",
+        "on-primary": "#ffffff",
+        "secondary-container": "#ffb8a8",
+        "primary-fixed": "#ffdad3",
+        "background": "#fcf9f4",
+        "secondary": "#865043",
+        "surface-variant": "#e5e2dd",
+        "on-surface-variant": "#534340",
+        "on-error": "#ffffff",
+        "secondary-fixed-dim": "#fcb6a5",
+        "error": "#ba1a1a",
+        "inverse-surface": "#31302d",
+        "on-tertiary-fixed-variant": "#394b3a",
+        "surface-container-highest": "#e5e2dd",
+        "on-tertiary": "#ffffff",
+        "tertiary-fixed-dim": "#b8ccb6",
+        "surface-container": "#f0ede9",
+        "surface-dim": "#dcdad5",
+        "surface": "#fcf9f4",
+        "on-primary-fixed-variant": "#713529",
+        "surface-bright": "#fcf9f4",
+        "secondary-fixed": "#ffdad2",
+        "on-background": "#1c1c19",
+        "error-container": "#ffdad6",
+        "surface-container-lowest": "#ffffff",
+        "primary-container": "#8b4a3c",
+        "primary": "#6e3327",
+        "on-tertiary-fixed": "#0f1f11",
+        "tertiary-fixed": "#d3e8d1",
+        "on-secondary-container": "#7a463a",
+        "on-secondary-fixed": "#350f07",
+        "on-primary-container": "#ffc9bd",
+        "outline-variant": "#d8c2bd",
+        "outline": "#86736f",
+        "on-error-container": "#93000a",
+        "inverse-primary": "#ffb4a4",
+        "on-tertiary-container": "#c6dbc4",
+        "on-secondary-fixed-variant": "#6a392e",
+        "surface-container-low": "#f6f3ee",
+        "primary-fixed-dim": "#ffb4a4"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "1rem",
+        "xl": "1.5rem",
+        "full": "9999px"
+      },
+      fontFamily: {
+        "headline": ["Noto Serif"],
+        "body": ["Manrope"],
+        "label": ["Manrope"]
+      }
     }
+  }
+}
+</script>
+
+<style>
+/* ── Base ── */
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #fcf9f4;
+}
 h1, h2, h3, h4, .font-serif {
-    font-family: "Noto Serif", serif
-    }
+  font-family: "Noto Serif", serif;
+}
+
+/* ── Grainy texture ── */
 .grainy-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 50;
-    opacity: 0.03;
-    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDA7RBAsYzb7EO1ujsoeNNXNJJIIjQCOBuxzpMpqbJ4sTxMR2aQAea06FAD7WsBWTuIqQGmi3-RmlukEg-MYUw07mmKkICGWln2vGhKrM5DzJB0I24wb3x7_nONkDjxBRlDf8J2_-rlLqXvCABe3ztgBlQLb5DwGq_cxAGfu-qmQjRX_lVECDw4oWZ5VqcsqTYhY8IBLvWdR_lOUCsF-K2RvnEvrAitQd-KGr0gJ9vCkZxgrjmgKB8-fDLtCH3fY6Sl50lFXonOMMC4)
-    }
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDA7RBAsYzb7EO1ujsoeNNXNJJIIjQCOBuxzpMpqbJ4sTxMR2aQAea06FAD7WsBWTuIqQGmi3-RmlukEg-MYUw07mmKkICGWln2vGhKrM5DzJB0I24wb3x7_nONkDjxBRlDf8J2_-rlLqXvCABe3ztgBlQLb5DwGq_cxAGfu-qmQjRX_lVECDw4oWZ5VqcsqTYhY8IBLvWdR_lOUCsF-K2RvnEvrAitQd-KGr0gJ9vCkZxgrjmgKB8-fDLtCH3fY6Sl50lFXonOMMC4);
+}
+
+/* ── Botanical ── */
 .botanical-accent {
-    filter: opacity(0.15) sepia(0.2);
-    pointer-events: none
-    }</style>
+  filter: opacity(0.15) sepia(0.2);
+  pointer-events: none;
+}
+
+/* ── Scroll margin for sticky nav ── */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* ══════ SCROLL REVEAL ══════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-44px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(44px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ══════ HERO STAGGER (IO) ══════ */
+.hero-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-d0 { transition-delay: 0.05s; }
+.hero-d1 { transition-delay: 0.3s; }
+.hero-d2 { transition-delay: 0.5s; }
+.hero-d3 { transition-delay: 0.7s; }
+
+/* ══════ CTA PULSE ══════ */
+@keyframes ctaPulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 10px 30px rgba(110,51,39,0.20); }
+  50%       { transform: scale(1.03); box-shadow: 0 16px 44px rgba(110,51,39,0.32); }
+}
+.cta-pulse {
+  animation: ctaPulse 2.8s ease-in-out infinite;
+}
+.cta-pulse:hover {
+  animation-play-state: paused;
+  transform: scale(1.05);
+}
+
+/* ══════ PROGRESS BAR ══════ */
+#progress-bar {
+  width: 0%;
+  transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ══════ GIFT CARD FILTER ══════ */
+.gift-card {
+  transition: opacity 0.32s ease, transform 0.32s ease,
+              box-shadow 0.4s ease, translate 0.4s ease;
+}
+.gift-card.hiding {
+  opacity: 0;
+  transform: scale(0.93);
+  pointer-events: none;
+}
+.gift-card.hidden-card {
+  display: none;
+}
+
+/* ══════ GIFT CARD GLOW ══════ */
+.gift-card:hover {
+  box-shadow: 0 0 0 2px rgba(142, 76, 62, 0.2),
+              0 24px 60px rgba(110, 51, 39, 0.09);
+}
+
+/* ══════ GIFT IMAGE OVERLAY ══════ */
+.gift-img-wrap {
+  position: relative;
+}
+.gift-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(110,51,39,0);
+  transition: background 0.45s ease;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.group:hover .gift-img-overlay {
+  background: rgba(110,51,39,0.05);
+}
+
+/* ══════ MODALS ══════ */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(28,28,25,0.52);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-backdrop.open {
+  display: flex;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.94) translateY(8px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+.modal-box {
+  animation: modalIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* RSVP success */
+#rsvp-success { display: none; }
+#rsvp-success.show { display: block; }
+
+/* ══════ BACK TO TOP ══════ */
+#back-to-top {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ══════ HAMBURGER ══════ */
+.ham-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#hamburger.open .ham-l1 { transform: translateY(7px) rotate(45deg); }
+#hamburger.open .ham-l2 { opacity: 0; transform: scaleX(0); }
+#hamburger.open .ham-l3 { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#mobile-menu.open {
+  max-height: 420px;
+}
+
+/* Filter button base */
+.filter-btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.filter-btn.active {
+  background-color: #6e3327;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(110,51,39,0.25);
+}
+.filter-btn:not(.active) {
+  background-color: #ebe8e3;
+  color: #534340;
+}
+.filter-btn:not(.active):hover {
+  background-color: #e5e2dd;
+}
+</style>
 </head>
+
 <body class="text-on-surface selection:bg-primary/20">
+
 <div class="grainy-overlay"></div>
-<!-- Navigation -->
-<nav class="sticky top-0 z-40 bg-surface/80 backdrop-blur-md transition-all duration-300">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<div class="text-2xl font-serif italic text-primary" style="">Chá de Casa Nova</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-primary font-bold border-b-2 border-primary/30 pb-1 text-sm font-medium tracking-wide" href="#inicio" style="">Início</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#historia" style="">Nossa História</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#presentes" style="">Lista de Presentes</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#como-funciona" style="">Como Funciona</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#evento" style="">O Evento</a>
-</div>
-<button class="bg-primary text-on-primary px-8 py-2 rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all active:scale-95" style="">
-                RSVP
-            </button>
-</div>
+
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+  <div class="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-7xl mx-auto">
+
+    <!-- Logo -->
+    <a href="#inicio" class="text-xl md:text-2xl font-serif italic text-primary">Chá de Casa Nova</a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-sm font-medium tracking-wide transition-colors hover:text-primary" href="#inicio"        data-section="inicio">Início</a>
+      <a class="nav-link text-sm font-medium tracking-wide transition-colors hover:text-primary" href="#historia"      data-section="historia">Nossa História</a>
+      <a class="nav-link text-sm font-medium tracking-wide transition-colors hover:text-primary" href="#presentes"     data-section="presentes">Lista de Presentes</a>
+      <a class="nav-link text-sm font-medium tracking-wide transition-colors hover:text-primary" href="#como-funciona" data-section="como-funciona">Como Funciona</a>
+      <a class="nav-link text-sm font-medium tracking-wide transition-colors hover:text-primary" href="#evento"        data-section="evento">O Evento</a>
+    </div>
+
+    <!-- RSVP + hamburger -->
+    <div class="flex items-center gap-3">
+      <button onclick="openRsvpModal()"
+        class="bg-primary text-on-primary px-6 md:px-8 py-2 rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all active:scale-95">
+        RSVP
+      </button>
+      <button id="hamburger" onclick="toggleMobileMenu()"
+        class="md:hidden flex flex-col gap-[5px] text-primary p-1 focus:outline-none">
+        <span class="ham-line ham-l1"></span>
+        <span class="ham-line ham-l2"></span>
+        <span class="ham-line ham-l3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden bg-surface/95 backdrop-blur-md border-t border-outline-variant/30">
+    <div class="flex flex-col px-6 py-4 gap-1">
+      <a onclick="closeMobileMenu()" class="nav-link text-sm font-medium tracking-wide py-3 border-b border-outline-variant/20 hover:text-primary transition-colors" href="#inicio"        data-section="inicio">Início</a>
+      <a onclick="closeMobileMenu()" class="nav-link text-sm font-medium tracking-wide py-3 border-b border-outline-variant/20 hover:text-primary transition-colors" href="#historia"      data-section="historia">Nossa História</a>
+      <a onclick="closeMobileMenu()" class="nav-link text-sm font-medium tracking-wide py-3 border-b border-outline-variant/20 hover:text-primary transition-colors" href="#presentes"     data-section="presentes">Lista de Presentes</a>
+      <a onclick="closeMobileMenu()" class="nav-link text-sm font-medium tracking-wide py-3 border-b border-outline-variant/20 hover:text-primary transition-colors" href="#como-funciona" data-section="como-funciona">Como Funciona</a>
+      <a onclick="closeMobileMenu()" class="nav-link text-sm font-medium tracking-wide py-3 hover:text-primary transition-colors"                                    href="#evento"        data-section="evento">O Evento</a>
+    </div>
+  </div>
 </nav>
+
 <main>
-<!-- Hero Section -->
-<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden bg-surface py-20" id="inicio">
-<div class="absolute inset-0 bg-gradient-to-tr from-primary-container/10 via-background to-secondary-container/10"></div>
-<div class="relative z-10 text-center max-w-4xl px-6">
-<span class="material-symbols-outlined text-primary text-4xl mb-4 block" style="font-variation-settings: &quot;FILL&quot; 1;">potted_plant</span>
-<p class="text-secondary font-serif italic text-xl mb-4" style="">Nossa nova jornada começa aqui</p>
-<h1 class="text-6xl md:text-8xl font-bold text-primary tracking-tight mb-6 leading-tight" style="">Hendrius &amp; Rayane</h1>
-<div class="flex items-center justify-center gap-4 mb-8">
-<div class="h-[1px] w-12 bg-outline-variant"></div>
-<span class="text-tertiary font-medium uppercase tracking-[0.3em] text-sm" style="">Chá de Casa Nova</span>
-<div class="h-[1px] w-12 bg-outline-variant"></div>
-</div>
-<p class="text-on-surface-variant body-lg mb-12 max-w-xl mx-auto" style="">
-                    Estamos construindo nosso ninho e sua presença é o maior presente. 
-                    <br>25 de Outubro de 2024 • São Paulo, SP
-                </p>
-<a class="inline-block bg-primary text-on-primary px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-lg shadow-primary/20" href="#presentes" style="">
-                    Ver Lista de Presentes
-                </a>
-</div>
-<!-- Botanical Decorative Elements -->
-<img class="absolute -bottom-10 -left-20 w-80 botanical-accent rotate-12" data-alt="minimalist botanical illustration of a leafy branch with soft organic lines in earth tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANoF-8G5BaPORW3x3--S4lCoASU2dls5YTYRRWn-0H2hqW7MhZ3RkX-BrmqjD42UMz2bmLvAd9Ppmwa_wX3QKvONLB1e-u7s9DQHVT2LVgVYkuxB8m52VvfznyL4Et8IMLpimu8Zt3MkOxOcTpiPsHx8EHd6PnCPz_otP05SJmYbSBCZiwbJxZ6-vq3bSP_1kUSKxpGUjalkblMi0IRcY3LvXbBS_waI9bjjiLaaPt7kuvfsm8yGWlGtpLA1mWGVh8C-XH4P9a7CsR" style="">
-<img class="absolute -top-10 -right-20 w-80 botanical-accent -rotate-12" data-alt="delicate hand-drawn floral branch illustration with soft sage green accents and organic curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYG76wjn5MfF_Ue-5aN7Flju0yzMJv6bTzlNZ0ovqgHa7lJUKxX9sgJvv42ZrvLZTjPm8zTl5ymTxK8oGzIefMXyPDtC_f5Aed7GSwCIVB0n75p5VHZBsIZVqw0Ty0iULIl3_1GyPv9pz_qA-XJ5mrkd-NK6Ts1tyIg_WxWHwz-LPnSHBuCbyockG43qIFj0MNxupdWBbIcbdcpwJY4_Es8VXo7sk-aNh_aQdTWaH7Le_PZBvNO7mOX5FLndUvfOIHyxx0viphj06r" style="">
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface pt-20 pb-0" id="inicio">
+  <!-- Parallax gradient -->
+  <div id="hero-parallax" class="absolute inset-0 bg-gradient-to-tr from-primary-container/10 via-background to-secondary-container/10 scale-110 will-change-transform"></div>
+
+  <div class="relative z-10 text-center max-w-4xl px-6 pb-24">
+    <span class="material-symbols-outlined text-primary text-4xl mb-4 block"
+      style="font-variation-settings:'FILL' 1;">potted_plant</span>
+
+    <p class="text-secondary font-serif italic text-xl mb-4">
+      Nossa nova jornada começa aqui
+    </p>
+
+    <h1 class="text-6xl md:text-8xl font-bold text-primary tracking-tight mb-6 leading-tight hero-item hero-d0">
+      Hendrius &amp; Rayane
+    </h1>
+
+    <div class="flex items-center justify-center gap-4 mb-8 hero-item hero-d1">
+      <div class="h-[1px] w-12 bg-outline-variant"></div>
+      <span class="text-tertiary font-medium uppercase tracking-[0.3em] text-sm">Chá de Casa Nova</span>
+      <div class="h-[1px] w-12 bg-outline-variant"></div>
+    </div>
+
+    <p class="text-on-surface-variant text-lg mb-12 max-w-xl mx-auto hero-item hero-d2">
+      Estamos construindo nosso ninho e sua presença é o maior presente.
+      <br>25 de Outubro de 2026 &bull; Bahia, Brasil
+    </p>
+
+    <a class="inline-block bg-primary text-on-primary px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg shadow-primary/20 cta-pulse hero-item hero-d3"
+      href="#presentes">
+      Ver Lista de Presentes
+    </a>
+  </div>
+
+  <!-- Botanical -->
+  <img class="absolute -bottom-10 -left-20 w-80 botanical-accent rotate-12 hidden md:block"
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuANoF-8G5BaPORW3x3--S4lCoASU2dls5YTYRRWn-0H2hqW7MhZ3RkX-BrmqjD42UMz2bmLvAd9Ppmwa_wX3QKvONLB1e-u7s9DQHVT2LVgVYkuxB8m52VvfznyL4Et8IMLpimu8Zt3MkOxOcTpiPsHx8EHd6PnCPz_otP05SJmYbSBCZiwbJxZ6-vq3bSP_1kUSKxpGUjalkblMi0IRcY3LvXbBS_waI9bjjiLaaPt7kuvfsm8yGWlGtpLA1mWGVh8C-XH4P9a7CsR" alt="">
+  <img class="absolute -top-10 -right-20 w-80 botanical-accent -rotate-12 hidden md:block"
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYG76wjn5MfF_Ue-5aN7Flju0yzMJv6bTzlNZ0ovqgHa7lJUKxX9sgJvv42ZrvLZTjPm8zTl5ymTxK8oGzIefMXyPDtC_f5Aed7GSwCIVB0n75p5VHZBsIZVqw0Ty0iULIl3_1GyPv9pz_qA-XJ5mrkd-NK6Ts1tyIg_WxWHwz-LPnSHBuCbyockG43qIFj0MNxupdWBbIcbdcpwJY4_Es8VXo7sk-aNh_aQdTWaH7Le_PZBvNO7mOX5FLndUvfOIHyxx0viphj06r" alt="">
 </section>
-<!-- Our Story -->
-<section class="py-24 px-6 bg-surface-container-low" id="historia">
-<div class="max-w-6xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-<div class="relative group">
-<div class="absolute -inset-4 bg-tertiary/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
-<img class="relative rounded-lg w-full aspect-[4/5] object-cover shadow-xl" data-alt="candid lifestyle photo of a young couple smiling warmly at each other in a sun-drenched modern apartment kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR9c2Oa-25CYmuwf_pPXx2jHgF2TG4mUYVqoHBJAGjh4bJw2__wZIxlw3hdmDPd9IqXedkpRuA_YTnRqVL6kDavUourwzmZ_JqXkI1J9hvEZ6du45G3HbgnLjE2sfo4zDC6ir-3YqIXDx-uLRgJJlVQppwM3I5xjJujB-JVyVHbENRSieH9rbUfQQKGUPe9yANXJ_FuCaS-qvwJF5nGXBh9pWuUN3fKzbZm9H1FG6tfK6_AgXqpevwYc2nfl9yg5_Ox0ONn1pbXBWv" style="">
+
+<!-- Wave Hero → História -->
+<div class="bg-surface relative -mb-px pointer-events-none" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="block w-full h-14 md:h-20">
+    <path d="M0,20 C180,72 400,0 600,42 C800,80 1040,8 1240,48 C1340,65 1400,20 1440,36 L1440,80 L0,80 Z" fill="#f6f3ee"/>
+  </svg>
 </div>
-<div class="space-y-8">
-<h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight" style="">Um novo capítulo, uma nova porta que se abre.</h2>
-<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
-<p class="" style="">Após anos sonhando juntos, finalmente encontramos o lugar que chamaremos de lar. Cada canto foi planejado para refletir quem somos e para receber aqueles que amamos.</p>
-<p class="" style="">O Chá de Casa Nova é mais do que uma celebração; é a oportunidade de partilhar a alegria dessa nova etapa com você, que faz parte da nossa história.</p>
-</div>
-<div class="pt-4">
-<span class="text-primary font-serif italic text-2xl" style="">Com carinho, H &amp; R.</span>
-</div>
-</div>
-</div>
-</div>
+
+<!-- ══════════════════════════════════════
+     NOSSA HISTÓRIA
+══════════════════════════════════════ -->
+<section class="py-24 px-6 bg-surface-container-low reveal" id="historia">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+      <!-- Photo -->
+      <div class="relative group reveal-left">
+        <div class="absolute -inset-4 bg-tertiary/10 rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+        <img class="relative rounded-lg w-full aspect-[4/5] object-cover shadow-xl"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR9c2Oa-25CYmuwf_pPXx2jHgF2TG4mUYVqoHBJAGjh4bJw2__wZIxlw3hdmDPd9IqXedkpRuA_YTnRqVL6kDavUourwzmZ_JqXkI1J9hvEZ6du45G3HbgnLjE2sfo4zDC6ir-3YqIXDx-uLRgJJlVQppwM3I5xjJujB-JVyVHbENRSieH9rbUfQQKGUPe9yANXJ_FuCaS-qvwJF5nGXBh9pWuUN3fKzbZm9H1FG6tfK6_AgXqpevwYc2nfl9yg5_Ox0ONn1pbXBWv"
+          alt="Hendrius e Rayane">
+      </div>
+
+      <!-- Text -->
+      <div class="space-y-8 reveal-right">
+        <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight">
+          Um novo capítulo, uma nova porta que se abre.
+        </h2>
+        <div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+          <p>Após anos sonhando juntos, finalmente encontramos o lugar que chamaremos de lar. Cada canto foi planejado para refletir quem somos e para receber aqueles que amamos.</p>
+          <p>O Chá de Casa Nova é mais do que uma celebração; é a oportunidade de partilhar a alegria dessa nova etapa com você, que faz parte da nossa história.</p>
+        </div>
+        <div class="pt-4">
+          <span class="text-primary font-serif italic text-2xl">Com carinho, H &amp; R.</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Gift Registry -->
-<section class="py-24 px-6 bg-surface" id="presentes">
-<div class="max-w-7xl mx-auto">
-<div class="text-center mb-16">
-<h2 class="text-4xl md:text-5xl font-bold text-primary mb-6" style="">Lista de Presentes</h2>
-<p class="text-on-surface-variant max-w-2xl mx-auto mb-10" style="">
-                        Selecionamos itens que ajudarão a compor nosso novo lar. Sua contribuição nos ajuda a transformar nossa casa em um refúgio.
-                    </p>
-<!-- Progress Bar -->
-<div class="max-w-md mx-auto mb-12">
-<div class="flex justify-between text-sm font-medium mb-2 text-secondary">
-<span class="" style="">42 de 60 itens presenteados</span>
-<span class="" style="">70%</span>
+
+<!-- Wave História → Presentes -->
+<div class="bg-surface-container-low relative -mb-px pointer-events-none" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="block w-full h-14 md:h-20">
+    <path d="M0,50 C220,10 480,72 720,36 C960,0 1180,62 1380,30 C1410,24 1428,36 1440,42 L1440,80 L0,80 Z" fill="#fcf9f4"/>
+  </svg>
 </div>
-<div class="w-full bg-surface-variant h-3 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[70%] rounded-full"></div>
-</div>
-</div>
-<!-- Filter Tabs -->
-<div class="flex flex-wrap justify-center gap-3 mb-16">
-<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-medium text-sm transition-all shadow-md" style="">Todos</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm hover:bg-surface-variant transition-all" style="">Cozinha</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm hover:bg-surface-variant transition-all" style="">Sala</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm hover:bg-surface-variant transition-all" style="">Quarto</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm hover:bg-surface-variant transition-all" style="">Decoração</button>
-</div>
-</div>
-<!-- Gift Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Gift Card 1 -->
-<div class="group bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
-<div class="aspect-square bg-surface-container-high rounded-lg mb-6 flex items-center justify-center overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="elegant matte white ceramic dinnerware set artistically stacked on a wooden surface with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWcWme8JLdJ2ofDisAXnIh6-L9jx-XiIiTinL6PLycTfvzBv76H8F8gGpBokZ9fuS_T39kCnIUQBFyoUts_9iJv_hY_qETtEoqYd0-yRG6NWoApC0GbT1VfihSitAGrhahzl9WdxmEkrh580EZiT12I0OLISv5ua_QmOIlPpNtVdkuWOI8fFA9dRmM-XRFvEXE-niPfsmII_buA5DYCYxLQvS-bJc91BvJtRgUF5YImL9YsVgeYQxH0avawgrgP-GeCLn-3GbghEkK" style="">
-</div>
-<div class="flex justify-between items-start mb-2">
-<span class="text-xs font-bold text-tertiary uppercase tracking-widest" style="">Cozinha</span>
-<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-1 rounded-full uppercase" style="">Disponível</span>
-</div>
-<h3 class="text-xl font-bold text-on-surface mb-2" style="">Jogo de Pratos Cerâmica</h3>
-<p class="text-primary font-bold text-lg mb-6" style="">R$ 280,00</p>
-<button class="w-full py-3 rounded-full border-2 border-outline-variant text-primary font-bold uppercase tracking-widest text-xs group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all" style="">
-                            Presentear
-                        </button>
-</div>
-<!-- Gift Card 2 -->
-<div class="group bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
-<div class="aspect-square bg-surface-container-high rounded-lg mb-6 flex items-center justify-center overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="minimalist espresso machine in brushed steel finish on a clean marble countertop with a single white cup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhaiAbAO-btYDOCFL8N8XbfSYJmmgUBgyAYaBcaJD66idT4ovXTp8g6Md-C2At0hN-k3Bl4ajUlZxKiUm3TncU7ieTwn3XW3SZCtLmV5oLUZgQmDtBCsalmBaiFEKX8KRRuJQ4EOWkjQTmhKBhZugwH7duOuVSuEbFcRvC6efW4esgrOSIQmcqlzJh2X6wN3KkmllVvoYmIGD6E61hjY3A3A61af1onCXi99MAFA8uz_5VOWBDhKrZ-ynBxxbJeucAFbDVfrKQFfcs" style="">
-</div>
-<div class="flex justify-between items-start mb-2">
-<span class="text-xs font-bold text-tertiary uppercase tracking-widest" style="">Eletro</span>
-<span class="bg-surface-variant text-on-surface-variant text-[10px] font-bold px-2 py-1 rounded-full uppercase" style="">Já presenteado</span>
-</div>
-<h3 class="text-xl font-bold text-on-surface mb-2 text-on-surface/50" style="">Cafeteira Expresso</h3>
-<p class="text-primary/50 font-bold text-lg mb-6" style="">R$ 450,00</p>
-<button class="w-full py-3 rounded-full bg-surface-variant text-on-surface-variant/50 font-bold uppercase tracking-widest text-xs cursor-not-allowed" disabled="" style="">
-                            Indisponível
-                        </button>
-</div>
-<!-- Gift Card 3 -->
-<div class="group bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
-<div class="aspect-square bg-surface-container-high rounded-lg mb-6 flex items-center justify-center overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="luxurious oversized beige throw blanket with soft texture draped over a modern wooden chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxEHdfmd_sa1VM1K5TsQkIctOSwrdE7NA1fIKx9DjkWB0it7hgCcoc9npukElzuLiaGCEHbzErSf4oPtKfxlpsHkoMmQzD0r4DGLSCbwaR7XRv-hb3MF22C2s4pJWjmew0OMgKAi4yxJWmoG_SVXa-vnOpBUO8rQV5ow-LrOY7Ja1DFsAZ64FRNSA_d5kAdhWHzwMI7HwxT01tj928ne_A4keBCV2x8877US5TjYt6EORPbT4e9Bnwqc9S3_YV3jAuel0TRL1msblA" style="">
-</div>
-<div class="flex justify-between items-start mb-2">
-<span class="text-xs font-bold text-tertiary uppercase tracking-widest" style="">Sala</span>
-<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-1 rounded-full uppercase" style="">Disponível</span>
-</div>
-<h3 class="text-xl font-bold text-on-surface mb-2" style="">Manta de Algodão Cru</h3>
-<p class="text-primary font-bold text-lg mb-6" style="">R$ 180,00</p>
-<button class="w-full py-3 rounded-full border-2 border-outline-variant text-primary font-bold uppercase tracking-widest text-xs group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all" style="">
-                            Presentear
-                        </button>
-</div>
-</div>
-</div>
+
+<!-- ══════════════════════════════════════
+     LISTA DE PRESENTES
+══════════════════════════════════════ -->
+<section class="py-24 px-6 bg-surface reveal" id="presentes">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Lista de Presentes</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mb-10">
+        Selecionamos itens que ajudarão a compor nosso novo lar. Sua contribuição nos ajuda a transformar nossa casa em um refúgio.
+      </p>
+
+      <!-- Progress -->
+      <div class="max-w-md mx-auto mb-12" id="progress-container">
+        <div class="flex justify-between text-sm font-medium mb-2 text-secondary">
+          <span id="progress-text">Carregando...</span>
+          <span id="progress-pct">0%</span>
+        </div>
+        <div class="w-full bg-surface-variant h-3 rounded-full overflow-hidden">
+          <div id="progress-bar" class="bg-primary h-full rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-16" id="filter-tabs">
+        <button class="filter-btn active    px-6 py-2 rounded-full font-medium text-sm" data-filter="todos">Todos</button>
+        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="cozinha">Cozinha</button>
+        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="sala">Sala</button>
+        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="quarto">Quarto</button>
+        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="banheiro">Banheiro</button>
+        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="decoração">Decoração</button>
+        <button class="filter-btn          px-6 py-2 rounded-full font-medium text-sm" data-filter="eletro">Eletro</button>
+      </div>
+    </div>
+
+    <!-- Gift Grid (rendered by JS) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gift-grid"></div>
+
+  </div>
 </section>
-<!-- How it Works -->
-<section class="py-24 px-6 bg-surface-container-low overflow-hidden relative" id="como-funciona">
-<div class="max-w-6xl mx-auto text-center relative z-10">
-<h2 class="text-4xl font-bold text-primary mb-20" style="">Como funciona</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-<div class="flex flex-col items-center">
-<div class="w-20 h-20 rounded-full bg-surface flex items-center justify-center mb-8 shadow-inner">
-<span class="material-symbols-outlined text-primary text-4xl" style="">shopping_basket</span>
+
+<!-- Wave Presentes → Como Funciona -->
+<div class="bg-surface relative -mb-px pointer-events-none" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="block w-full h-14 md:h-20">
+    <path d="M0,60 C300,10 600,72 900,32 C1080,10 1260,60 1440,42 L1440,80 L0,80 Z" fill="#f6f3ee"/>
+  </svg>
 </div>
-<h4 class="text-xl font-bold mb-4" style="">Escolha um item</h4>
-<p class="text-on-surface-variant" style="">Navegue pela nossa lista e escolha algo que você gostaria de nos dar.</p>
-</div>
-<div class="flex flex-col items-center">
-<div class="w-20 h-20 rounded-full bg-surface flex items-center justify-center mb-8 shadow-inner">
-<span class="material-symbols-outlined text-primary text-4xl" style="">mark_as_unread</span>
-</div>
-<h4 class="text-xl font-bold mb-4" style="">Avise-nos</h4>
-<p class="text-on-surface-variant" style="">Após escolher, clique no botão para confirmar. Você será direcionado para o pagamento ou reserva.</p>
-</div>
-<div class="flex flex-col items-center">
-<div class="w-20 h-20 rounded-full bg-surface flex items-center justify-center mb-8 shadow-inner">
-<span class="material-symbols-outlined text-primary text-4xl" style="">celebration</span>
-</div>
-<h4 class="text-xl font-bold mb-4" style="">Apareça na festa</h4>
-<p class="text-on-surface-variant" style="">O mais importante! Traga seu abraço e sua alegria para celebrar conosco.</p>
-</div>
-</div>
-</div>
-<img class="absolute -bottom-20 -right-20 w-96 botanical-accent opacity-5" data-alt="abstract organic line art of botanical leaves in a continuous line style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmzgw0jRF_8GjmQaocWr-HcQid2uakVzb6aPv6dBvOrLtnbijuybBHZQSd6QJ-z7n_bpP8cXNoNrp-R6LdgPDF_U5H8G8fV_vGV-0JXHfBbAPuiR3F_0HM2_O-3LW_sB5fk708cWUlwZCTZgrfn7WOUUo7XLAfP44r1gplcEgnKdj41h6xiXZsWJfBLT1aGsSo6OkDtsJ_gyTC9XkXcZ4MPRRhFS8mFdaOy4qyWoJtt2M0hldiLZ8dGHsVA_fFzu0PwM_-D8MxLOz7" style="">
+
+<!-- ══════════════════════════════════════
+     COMO FUNCIONA
+══════════════════════════════════════ -->
+<section class="py-24 px-6 bg-surface-container-low overflow-hidden relative reveal" id="como-funciona">
+  <div class="max-w-6xl mx-auto text-center relative z-10">
+    <h2 class="text-4xl font-bold text-primary mb-20 reveal">Como funciona</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+
+      <div class="flex flex-col items-center reveal-left" style="transition-delay:0s">
+        <div class="w-20 h-20 rounded-full bg-surface flex items-center justify-center mb-8 shadow-inner">
+          <span class="material-symbols-outlined text-primary text-4xl">shopping_basket</span>
+        </div>
+        <h4 class="text-xl font-bold mb-4">Escolha um item</h4>
+        <p class="text-on-surface-variant">Navegue pela nossa lista e escolha algo que você gostaria de nos dar.</p>
+      </div>
+
+      <div class="flex flex-col items-center reveal-left" style="transition-delay:0.18s">
+        <div class="w-20 h-20 rounded-full bg-surface flex items-center justify-center mb-8 shadow-inner">
+          <span class="material-symbols-outlined text-primary text-4xl">mark_as_unread</span>
+        </div>
+        <h4 class="text-xl font-bold mb-4">Avise-nos</h4>
+        <p class="text-on-surface-variant">Após escolher, clique no botão para confirmar. Você será direcionado para o WhatsApp.</p>
+      </div>
+
+      <div class="flex flex-col items-center reveal-left" style="transition-delay:0.36s">
+        <div class="w-20 h-20 rounded-full bg-surface flex items-center justify-center mb-8 shadow-inner">
+          <span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+        </div>
+        <h4 class="text-xl font-bold mb-4">Apareça na festa</h4>
+        <p class="text-on-surface-variant">O mais importante! Traga seu abraço e sua alegria para celebrar conosco.</p>
+      </div>
+
+    </div>
+  </div>
+  <img class="absolute -bottom-20 -right-20 w-96 botanical-accent opacity-5 hidden md:block"
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmzgw0jRF_8GjmQaocWr-HcQid2uakVzb6aPv6dBvOrLtnbijuybBHZQSd6QJ-z7n_bpP8cXNoNrp-R6LdgPDF_U5H8G8fV_vGV-0JXHfBbAPuiR3F_0HM2_O-3LW_sB5fk708cWUlwZCTZgrfn7WAUOo7XLAfP44r1gplcEgnKdj41h6xiXZsWJfBLT1aGsSo6OkDtsJ_gyTC9XkXcZ4MPRRhFS8mFdaOy4qyWoJtt2M0hldiLZ8dGHsVA_fFzu0PwM_-D8MxLOz7" alt="">
 </section>
-<!-- Event Details -->
-<section class="py-24 px-6 bg-surface" id="evento">
-<div class="max-w-7xl mx-auto">
-<div class="bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-<div class="w-full md:w-1/2 p-12 lg:p-20 flex flex-col justify-center">
-<h2 class="text-4xl font-bold text-primary mb-8" style="">O Evento</h2>
-<div class="space-y-10">
-<div class="flex gap-6 items-start">
-<span class="material-symbols-outlined text-secondary text-3xl" style="">calendar_today</span>
-<div>
-<h5 class="font-bold text-lg" style="">Data &amp; Horário</h5>
-<p class="text-on-surface-variant text-lg" style="">25 de Outubro de 2026, às 16:00h</p>
+
+<!-- Wave Como Funciona → Evento -->
+<div class="bg-surface-container-low relative -mb-px pointer-events-none" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="block w-full h-14 md:h-20">
+    <path d="M0,30 C240,82 520,0 760,48 C1000,90 1220,10 1440,50 L1440,80 L0,80 Z" fill="#fcf9f4"/>
+  </svg>
 </div>
-</div>
-<div class="flex gap-6 items-start">
-<span class="material-symbols-outlined text-secondary text-3xl" style="">location_on</span>
-<div>
-<h5 class="font-bold text-lg" style="">''Localização</h5>
-<p class="text-on-surface-variant text-lg" style="">Rua Pedro de Souza Gomes, 295. Bahia, Brasil.</p>
-</div>
-</div>
-</div>
-<div class="mt-16 flex flex-wrap gap-4">
-<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all" style="">Confirmar Presença</button>
-<button class="border-2 border-outline-variant text-primary px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-surface-variant transition-all" style="">Ver no Mapa</button>
-</div>
-</div>
-<div class="w-full md:w-1/2 h-[400px] md:h-auto min-h-[400px] bg-surface-variant relative">
-<img class="absolute inset-0 w-full h-full object-cover" data-alt="styled minimalist map focusing on a residential area in São Paulo with warm beige and terracotta color tones" data-location="São Paulo, Brazil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc0dDAwKmVKO59YXaIEcM3bPd4v2fJb4IQ48RKiHoUnu0Isf_30rsTpas5ia3vpFgEFcmM-uj7nalgVxERYk6QkN_FlrOcz8a7UL_J66-hVigNjv-aXd57orTPwNENHw7E2SWkHE23Lm8GustkN3eitsJLwzZ09rk9cF300kM5RNIQR1G9ZuIjyj5OYDC8HvI9nbGUxI2nJv0lOsbqunAZGh9sT1_PsFuexcYsKU46Ci5x_ieZ_WDb4GfwgdAJyhz16BKqDKnDwelB" style="">
-<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-</div>
-</div>
-</div>
+
+<!-- ══════════════════════════════════════
+     EVENTO
+══════════════════════════════════════ -->
+<section class="py-24 px-6 bg-surface reveal" id="evento">
+  <div class="max-w-7xl mx-auto">
+    <div class="bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+
+      <!-- Text -->
+      <div class="w-full md:w-1/2 p-12 lg:p-20 flex flex-col justify-center reveal-left">
+        <h2 class="text-4xl font-bold text-primary mb-8">O Evento</h2>
+        <div class="space-y-10">
+          <div class="flex gap-6 items-start">
+            <span class="material-symbols-outlined text-secondary text-3xl">calendar_today</span>
+            <div>
+              <h5 class="font-bold text-lg">Data &amp; Horário</h5>
+              <p class="text-on-surface-variant text-lg">25 de Outubro de 2026, às 16:00h</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start">
+            <span class="material-symbols-outlined text-secondary text-3xl">location_on</span>
+            <div>
+              <h5 class="font-bold text-lg">Localização</h5>
+              <p class="text-on-surface-variant text-lg">Rua Pedro de Souza Gomes, 295. Bahia, Brasil.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16 flex flex-wrap gap-4">
+          <button onclick="openRsvpModal()"
+            class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all">
+            Confirmar Presença
+          </button>
+          <button class="border-2 border-outline-variant text-primary px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-surface-variant transition-all">
+            Ver no Mapa
+          </button>
+        </div>
+      </div>
+
+      <!-- Map image -->
+      <div class="w-full md:w-1/2 h-[400px] md:h-auto min-h-[400px] bg-surface-variant relative reveal-right">
+        <img class="absolute inset-0 w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc0dDAwKmVKO59YXaIEcM3bPd4v2fJb4IQ48RKiHoUnu0Isf_30rsTpas5ia3vpFgEFcmM-uj7nalgVxERYk6QkN_FlrOcz8a7UL_J66-hVigNjv-aXd57orTPwNENHw7E2SWkHE23Lm8GustkN3eitsJLwzZ09rk9cF300kM5RNIQR1G9ZuIjyj5OYDC8HvI9nbGUxI2nJv0lOsbqunAZGh9sT1_PsFuexcYsKU46Ci5x_ieZ_WDb4GfwgdAJyhz16BKqDKnDwelB"
+          alt="Localização do evento">
+        <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+      </div>
+
+    </div>
+  </div>
 </section>
+
 </main>
-<!-- Footer -->
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
 <footer class="bg-surface-container-low py-12 px-4">
-<div class="flex flex-col items-center gap-6 w-full px-4 text-center max-w-7xl mx-auto">
-<div class="text-xl font-serif text-primary" style="">Chá de Casa Nova</div>
-<p class="font-serif text-lg italic text-on-surface-variant" style="">Feito com amor para nossa nova casa</p>
-<div class="flex gap-8">
-<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm uppercase tracking-widest font-bold" href="#" style="">Instagram</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm uppercase tracking-widest font-bold" href="#" style="">WhatsApp</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm uppercase tracking-widest font-bold" href="#" style="">Mapa</a>
-</div>
-<div class="h-[1px] w-full max-w-md bg-outline-variant/30 my-4"></div>
-<p class="text-xs text-on-surface-variant/60 font-medium uppercase tracking-[0.2em]" style="">Hendrius &amp; Rayane © 2026</p>
-</div>
+  <div class="flex flex-col items-center gap-6 w-full px-4 text-center max-w-7xl mx-auto">
+    <div class="text-xl font-serif text-primary">Chá de Casa Nova</div>
+    <p class="font-serif text-lg italic text-on-surface-variant">Feito com amor para nossa nova casa</p>
+    <div class="flex gap-8">
+      <a class="text-on-surface-variant hover:text-secondary transition-colors text-sm uppercase tracking-widest font-bold" href="#">Instagram</a>
+      <a class="text-on-surface-variant hover:text-secondary transition-colors text-sm uppercase tracking-widest font-bold" href="#">WhatsApp</a>
+      <a class="text-on-surface-variant hover:text-secondary transition-colors text-sm uppercase tracking-widest font-bold" href="#evento">Mapa</a>
+    </div>
+    <div class="h-[1px] w-full max-w-md bg-outline-variant/30 my-4"></div>
+    <p class="text-xs text-on-surface-variant/60 font-medium uppercase tracking-[0.2em]">Hendrius &amp; Rayane &copy; 2026</p>
+  </div>
 </footer>
-<!-- Floating Back to Top -->
-<button class="fixed bottom-8 right-8 w-14 h-14 bg-surface-container-lowest text-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 border border-outline-variant/20" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="">
-<span class="material-symbols-outlined text-3xl" style="">expand_less</span>
+
+<!-- ══════════════════════════════════════
+     BACK TO TOP
+══════════════════════════════════════ -->
+<button id="back-to-top"
+  class="fixed bottom-8 right-8 w-14 h-14 bg-surface-container-lowest text-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 z-50 border border-outline-variant/20"
+  onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <span class="material-symbols-outlined text-3xl">expand_less</span>
 </button>
-</body></html>
+
+<!-- ══════════════════════════════════════
+     MODAL: PRESENTEAR
+══════════════════════════════════════ -->
+<div id="gift-modal" class="modal-backdrop" onclick="handleBackdropClick(event,'gift-modal')">
+  <div class="modal-box bg-surface-container-lowest rounded-xl max-w-md p-6 sm:p-8 mx-auto">
+
+    <div class="flex justify-between items-start mb-6">
+      <h3 class="text-2xl font-bold text-primary" id="modal-gift-title" style="font-family:'Noto Serif',serif">—</h3>
+      <button onclick="closeGiftModal()" class="text-on-surface-variant hover:text-primary transition-colors ml-4 flex-shrink-0">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div id="modal-gift-visual"
+      class="aspect-video rounded-lg mb-6 flex items-center justify-center overflow-hidden bg-surface-container-high">
+    </div>
+
+    <div class="flex justify-between items-center mb-6">
+      <span class="text-xs font-bold text-tertiary uppercase tracking-widest" id="modal-gift-category">—</span>
+      <span class="text-primary font-bold text-xl" id="modal-gift-price">—</span>
+    </div>
+
+    <p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+      Para confirmar este presente, entre em contato pelo WhatsApp. Ficamos muito felizes com sua escolha! 🎁
+    </p>
+
+    <div class="flex flex-col gap-3">
+      <a id="modal-whatsapp-btn" href="#" target="_blank" rel="noopener"
+        class="flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-md">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Abrir WhatsApp
+      </a>
+      <button onclick="closeGiftModal()"
+        class="border-2 border-outline-variant text-primary px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-surface-variant transition-all">
+        Fechar
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL: RSVP
+══════════════════════════════════════ -->
+<div id="rsvp-modal" class="modal-backdrop" onclick="handleBackdropClick(event,'rsvp-modal')">
+  <div class="modal-box bg-surface-container-lowest rounded-xl max-w-lg p-6 sm:p-8 mx-auto">
+
+    <div class="flex justify-between items-start mb-6">
+      <div>
+        <h3 class="text-2xl font-bold text-primary" style="font-family:'Noto Serif',serif">Confirmar Presença</h3>
+        <p class="text-on-surface-variant text-sm mt-1">25 de Outubro de 2026 &bull; Bahia, Brasil</p>
+      </div>
+      <button onclick="closeRsvpModal()" class="text-on-surface-variant hover:text-primary transition-colors ml-4 flex-shrink-0">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Form -->
+    <form id="rsvp-form" onsubmit="handleRsvpSubmit(event)" class="space-y-4" novalidate>
+      <div>
+        <label class="block text-sm font-bold text-on-surface mb-1" for="rsvp-name">Nome completo *</label>
+        <input type="text" id="rsvp-name" autocomplete="name" placeholder="Seu nome completo"
+          class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors text-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-on-surface mb-1" for="rsvp-phone">WhatsApp *</label>
+        <input type="tel" id="rsvp-phone" autocomplete="tel" placeholder="(00) 00000-0000"
+          class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors text-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-on-surface mb-1" for="rsvp-guests">Quantas pessoas virão? *</label>
+        <select id="rsvp-guests"
+          class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors text-sm">
+          <option value="">Selecione...</option>
+          <option value="Somente eu (1 pessoa)">Somente eu</option>
+          <option value="2 pessoas">2 pessoas</option>
+          <option value="3 pessoas">3 pessoas</option>
+          <option value="4 pessoas">4 pessoas</option>
+          <option value="5 ou mais pessoas">5 ou mais</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-on-surface mb-1" for="rsvp-restriction">Restrição alimentar <span class="font-normal text-on-surface-variant">(opcional)</span></label>
+        <input type="text" id="rsvp-restriction" placeholder="Ex: vegetariano, sem glúten..."
+          class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors text-sm">
+      </div>
+      <p id="rsvp-error" class="text-error text-sm hidden"></p>
+      <button type="submit"
+        class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-md mt-2">
+        <span class="material-symbols-outlined text-lg">send</span>
+        Confirmar via WhatsApp
+      </button>
+    </form>
+
+    <!-- Success -->
+    <div id="rsvp-success" class="text-center py-8">
+      <span class="material-symbols-outlined text-6xl mb-4 block" style="color:#374938;font-variation-settings:'FILL' 1;">check_circle</span>
+      <h4 class="text-xl font-bold text-primary mb-2">Uhuuu! Até lá! 🎉</h4>
+      <p class="text-on-surface-variant">Sua presença foi confirmada. Mal podemos esperar para te ver!</p>
+      <button onclick="closeRsvpModal()"
+        class="mt-6 border-2 border-outline-variant text-primary px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-surface-variant transition-all">
+        Fechar
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+'use strict';
+
+// ─────────────────────────────────────
+// CONFIGURAÇÃO  ← altere o número aqui
+// ─────────────────────────────────────
+const WHATSAPP = '5571999999999';
+
+// ─────────────────────────────────────
+// DADOS
+// ─────────────────────────────────────
+const gifts = [
+  {
+    id: 1, name: 'Jogo de Pratos Cerâmica', category: 'cozinha', price: 280,
+    status: 'available', icon: '🍽️',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDWcWme8JLdJ2ofDisAXnIh6-L9jx-XiIiTinL6PLycTfvzBv76H8F8gGpBokZ9fuS_T39kCnIUQBFyoUts_9iJv_hY_qETtEoqYd0-yRG6NWoApC0GbT1VfihSitAGrhahzl9WdxmEkrh580EZiT12I0OLISv5ua_QmOIlPpNtVdkuWOI8fFA9dRmM-XRFvEXE-niPfsmII_buA5DYCYxLQvS-bJc91BvJtRgUF5YImL9YsVgeYQxH0avawgrgP-GeCLn-3GbghEkK'
+  },
+  {
+    id: 2, name: 'Cafeteira Expresso', category: 'eletro', price: 450,
+    status: 'gifted', icon: '☕',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhaiAbAO-btYDOCFL8N8XbfSYJmmgUBgyAYaBcaJD66idT4ovXTp8g6Md-C2At0hN-k3Bl4ajUlZxKiUm3TncU7ieTwn3XW3SZCtLmV5oLUZgQmDtBCsalmBaiFEKX8KRRuJQ4EOWkjQTmhKBhZugwH7duOuVSuEbFcRvC6efW4esgrOSIQmcqlzJh2X6wN3KkmllVvoYmIGD6E61hjY3A3A61af1onCXi99MAFA8uz_5VOWBDhKrZ-ynBxxbJeucAFbDVfrKQFfcs'
+  },
+  {
+    id: 3, name: 'Manta de Algodão Cru', category: 'sala', price: 180,
+    status: 'available', icon: '🛋️',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDxEHdfmd_sa1VM1K5TsQkIctOSwrdE7NA1fIKx9DjkWB0it7hgCcoc9npukElzuLiaGCEHbzErSf4oPtKfxlpsHkoMmQzD0r4DGLSCbwaR7XRv-hb3MF22C2s4pJWjmew0OMgKAi4yxJWmoG_SVXa-vnOpBUO8rQV5ow-LrOY7Ja1DFsAZ64FRNSA_d5kAdhWHzwMI7HwxT01tj928ne_A4keBCV2x8877US5TjYt6EORPbT4e9Bnwqc9S3_YV3jAuel0TRL1msblA'
+  },
+  { id: 4,  name: 'Jogo de Panelas Antiaderente',     category: 'cozinha',  price: 350, status: 'available', icon: '🍳' },
+  { id: 5,  name: 'Conjunto de Toalhas Felpudas',     category: 'banheiro', price: 120, status: 'gifted',    icon: '🛁' },
+  { id: 6,  name: 'Quadro Decorativo Canvas',         category: 'decoração',price: 220, status: 'available', icon: '🖼️' },
+  { id: 7,  name: 'Luminária de Piso',                category: 'sala',     price: 380, status: 'available', icon: '💡' },
+  { id: 8,  name: 'Jogo de Cama Queen 300 Fios',      category: 'quarto',   price: 320, status: 'available', icon: '🛏️' },
+  { id: 9,  name: 'Liquidificador High Speed',        category: 'eletro',   price: 280, status: 'gifted',    icon: '🫙' },
+  { id: 10, name: 'Tapete Sala 2×3m',                 category: 'sala',     price: 450, status: 'available', icon: '🏡' },
+  { id: 11, name: 'Conjunto de Xícaras Porcelana',    category: 'cozinha',  price: 150, status: 'available', icon: '🫖' },
+  { id: 12, name: 'Espelho Decorativo Arredondado',   category: 'decoração',price: 310, status: 'available', icon: '🪞' },
+];
+
+// ─────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────
+function fmt(n) {
+  return n.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+}
+
+// ─────────────────────────────────────
+// RENDER GIFTS
+// ─────────────────────────────────────
+let activeGiftFilter = 'todos';
+let filterAnimationToken = 0;
+
+function renderGifts() {
+  const grid = document.getElementById('gift-grid');
+  grid.innerHTML = '';
+
+  gifts.forEach((gift, i) => {
+    const gifted = gift.status === 'gifted';
+    const delay  = (i % 3) * 100;
+
+    const imgHtml = gift.image
+      ? `<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              src="${gift.image}" alt="${gift.name}" loading="lazy">
+         <div class="gift-img-overlay rounded-lg"></div>`
+      : `<span class="text-6xl select-none pointer-events-none">${gift.icon}</span>`;
+
+    const card = document.createElement('div');
+    card.className = 'gift-card group bg-surface-container-lowest p-6 rounded-lg reveal';
+    card.style.transitionDelay = `${delay}ms`;
+    card.dataset.category = gift.category;
+
+    card.innerHTML = `
+      <div class="aspect-square bg-surface-container-high rounded-lg mb-6 flex items-center justify-center overflow-hidden gift-img-wrap">
+        ${imgHtml}
+      </div>
+      <div class="flex justify-between items-start mb-2">
+        <span class="text-xs font-bold text-tertiary uppercase tracking-widest">${gift.category}</span>
+        <span class="${gifted
+          ? 'bg-surface-variant text-on-surface-variant'
+          : 'bg-tertiary-fixed text-on-tertiary-fixed'
+        } text-[10px] font-bold px-2 py-1 rounded-full uppercase whitespace-nowrap">
+          ${gifted ? 'Já presenteado' : 'Disponível'}
+        </span>
+      </div>
+      <h3 class="text-xl font-bold mb-2 ${gifted ? 'text-on-surface/50' : 'text-on-surface'}">${gift.name}</h3>
+      <p class="font-bold text-lg mb-6 ${gifted ? 'text-primary/50' : 'text-primary'}">R$&nbsp;${fmt(gift.price)}</p>
+      ${gifted
+        ? `<button class="w-full py-3 rounded-full bg-surface-variant text-on-surface-variant/50 font-bold uppercase tracking-widest text-xs cursor-not-allowed" disabled>Indisponível</button>`
+        : `<button
+             onclick="openGiftModal(${gift.id})"
+             class="w-full py-3 rounded-full border-2 border-outline-variant text-primary font-bold uppercase tracking-widest text-xs group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all">
+             Presentear
+           </button>`
+      }
+    `;
+    grid.appendChild(card);
+  });
+
+  // Re-observe new elements
+  requestAnimationFrame(() => requestAnimationFrame(attachRevealObserver));
+}
+
+function applyGiftFilter(filter) {
+  activeGiftFilter = filter;
+  const token = ++filterAnimationToken;
+  const cards = Array.from(document.querySelectorAll('#gift-grid .gift-card'));
+  let staggerIndex = 0;
+
+  cards.forEach(card => {
+    const match = filter === 'todos' || card.dataset.category === filter;
+
+    if (match) {
+      const delay = (staggerIndex % 3) * 100;
+      staggerIndex += 1;
+
+      card.classList.remove('hidden-card');
+      card.classList.add('hiding');
+      card.style.transitionDelay = `${delay}ms`;
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (token !== filterAnimationToken) return;
+          card.classList.remove('hiding');
+        });
+      });
+      return;
+    }
+
+    card.style.transitionDelay = '0ms';
+    card.classList.add('hiding');
+    window.setTimeout(() => {
+      if (token !== filterAnimationToken || activeGiftFilter === 'todos') return;
+      if (card.dataset.category !== activeGiftFilter) {
+        card.classList.add('hidden-card');
+      }
+    }, 320);
+  });
+}
+
+// ─────────────────────────────────────
+// PROGRESSO
+// ─────────────────────────────────────
+function updateProgress() {
+  const total  = gifts.length;
+  const gifted = gifts.filter(g => g.status === 'gifted').length;
+  const pct    = Math.round((gifted / total) * 100);
+
+  document.getElementById('progress-text').textContent = `${gifted} de ${total} itens já presenteados`;
+  document.getElementById('progress-pct').textContent  = `${pct}%`;
+
+  const bar = document.getElementById('progress-bar');
+  const io  = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      bar.style.width = `${pct}%`;
+      io.disconnect();
+    }
+  }, { threshold: 0.5 });
+  io.observe(document.getElementById('progress-container'));
+}
+
+// ─────────────────────────────────────
+// FILTROS
+// ─────────────────────────────────────
+function initFilters() {
+  document.getElementById('filter-tabs').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    applyGiftFilter(btn.dataset.filter);
+  });
+}
+
+// ─────────────────────────────────────
+// MODAL: PRESENTEAR
+// ─────────────────────────────────────
+function openGiftModal(id) {
+  const gift = gifts.find(g => g.id === id);
+  if (!gift) return;
+
+  document.getElementById('modal-gift-title').textContent    = gift.name;
+  document.getElementById('modal-gift-category').textContent = gift.category;
+  document.getElementById('modal-gift-price').textContent    = `R$ ${fmt(gift.price)}`;
+
+  const visual = document.getElementById('modal-gift-visual');
+  visual.innerHTML = gift.image
+    ? `<img src="${gift.image}" alt="${gift.name}" class="w-full h-full object-cover">`
+    : `<span class="text-7xl">${gift.icon}</span>`;
+
+  const msg = encodeURIComponent(`Olá! Quero presentear: ${gift.name} (R$ ${fmt(gift.price)}) no Chá de Casa Nova de Hendrius & Rayane 🏡`);
+  document.getElementById('modal-whatsapp-btn').href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+
+  document.getElementById('gift-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeGiftModal() {
+  document.getElementById('gift-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ─────────────────────────────────────
+// MODAL: RSVP
+// ─────────────────────────────────────
+function openRsvpModal() {
+  document.getElementById('rsvp-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Reset
+  document.getElementById('rsvp-form').style.display    = '';
+  document.getElementById('rsvp-success').style.display = 'none';
+  document.getElementById('rsvp-error').classList.add('hidden');
+  document.getElementById('rsvp-error').textContent     = '';
+}
+function closeRsvpModal() {
+  document.getElementById('rsvp-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleRsvpSubmit(e) {
+  e.preventDefault();
+  const name        = document.getElementById('rsvp-name').value.trim();
+  const phone       = document.getElementById('rsvp-phone').value.trim();
+  const guests      = document.getElementById('rsvp-guests').value;
+  const restriction = document.getElementById('rsvp-restriction').value.trim();
+  const errorEl     = document.getElementById('rsvp-error');
+
+  if (!name || !phone || !guests) {
+    errorEl.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+    errorEl.classList.remove('hidden');
+    return;
+  }
+  errorEl.classList.add('hidden');
+
+  let msg = `Olá! Gostaria de confirmar minha presença no Chá de Casa Nova de Hendrius & Rayane 🏡\n\n`;
+  msg += `*Nome:* ${name}\n`;
+  msg += `*WhatsApp:* ${phone}\n`;
+  msg += `*Pessoas:* ${guests}\n`;
+  if (restriction) msg += `*Restrição alimentar:* ${restriction}\n`;
+
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+
+  document.getElementById('rsvp-form').style.display    = 'none';
+  document.getElementById('rsvp-success').style.display = 'block';
+}
+
+// Backdrop click
+function handleBackdropClick(e, id) {
+  if (e.target.id === id) {
+    id === 'gift-modal' ? closeGiftModal() : closeRsvpModal();
+  }
+}
+// Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeGiftModal(); closeRsvpModal(); }
+});
+
+// ─────────────────────────────────────
+// NAVBAR
+// ─────────────────────────────────────
+function initNavbar() {
+  const navbar = document.getElementById('navbar');
+
+  // Scroll → solid
+  function updateNavbar() {
+    if (window.scrollY > 80) {
+      navbar.style.background    = 'rgba(252,249,244,0.9)';
+      navbar.style.backdropFilter = 'blur(12px)';
+      navbar.style.webkitBackdropFilter = 'blur(12px)';
+      navbar.style.boxShadow     = '0 1px 12px rgba(28,28,25,0.06)';
+    } else {
+      navbar.style.background    = 'transparent';
+      navbar.style.backdropFilter = 'none';
+      navbar.style.webkitBackdropFilter = 'none';
+      navbar.style.boxShadow     = 'none';
+    }
+  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  // Active section
+  const sections = document.querySelectorAll('section[id]');
+  const links    = document.querySelectorAll('.nav-link[data-section]');
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      links.forEach(l => {
+        const active = l.dataset.section === id;
+        l.style.color       = active ? '#6e3327' : '';
+        l.style.fontWeight  = active ? '700' : '';
+        l.style.borderBottom = active ? '2px solid rgba(110,51,39,0.3)' : '';
+        l.style.paddingBottom = active ? '4px' : '';
+      });
+    });
+  }, { rootMargin: '-25% 0px -70% 0px' });
+
+  sections.forEach(s => io.observe(s));
+}
+
+// ─────────────────────────────────────
+// HAMBURGER
+// ─────────────────────────────────────
+function toggleMobileMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) closeMobileMenu();
+});
+
+// ─────────────────────────────────────
+// SCROLL REVEAL
+// ─────────────────────────────────────
+let revealObserver = null;
+function attachRevealObserver() {
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+  }
+  document.querySelectorAll('.reveal:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible), .hero-item:not(.visible)')
+    .forEach(el => revealObserver.observe(el));
+}
+
+// ─────────────────────────────────────
+// HERO PARALLAX
+// ─────────────────────────────────────
+function initHeroParallax() {
+  const hero     = document.getElementById('inicio');
+  const gradient = document.getElementById('hero-parallax');
+
+  hero.addEventListener('mousemove', e => {
+    const { left, top, width, height } = hero.getBoundingClientRect();
+    const cx = (e.clientX - left) / width  - 0.5;
+    const cy = (e.clientY - top)  / height - 0.5;
+    gradient.style.transition = 'transform 80ms ease-out';
+    gradient.style.transform  = `translate(${cx * 22}px, ${cy * 22}px) scale(1.1)`;
+  });
+  hero.addEventListener('mouseleave', () => {
+    gradient.style.transition = 'transform 700ms ease-out';
+    gradient.style.transform  = 'translate(0,0) scale(1.1)';
+  });
+}
+
+// ─────────────────────────────────────
+// BACK TO TOP
+// ─────────────────────────────────────
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+}
+
+// ─────────────────────────────────────
+// INIT
+// ─────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  renderGifts();
+  applyGiftFilter('todos');
+  updateProgress();
+  initFilters();
+  initNavbar();
+  attachRevealObserver();
+  initHeroParallax();
+  initBackToTop();
+});
+</script>
+
+</body>
+</html>
